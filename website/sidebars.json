@@ -1,0 +1,12 @@
+{
+  "docs": {
+    "Getting Started": ["doc1", "doc9"],
+    "Guides": ["doc2"]
+  },
+  "api": {
+    "First Category": ["doc4", "doc5"]
+  },
+  "tutorial": {
+    "Tutorial": ["settingUp"]
+  }
+}
