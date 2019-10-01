@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Getting Started": ["doc1", "doc9"],
+    "Getting Started": ["installation", "doc9"],
     "Guides": ["doc2"]
   },
   "api": {

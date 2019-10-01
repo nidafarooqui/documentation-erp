@@ -48,7 +48,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: "doc1", label: "Docs" },
+    { doc: "installation", label: "Docs" },
     { doc: "settingUp", label: "Tutorial" },
     { doc: "doc4", label: "API" },
     { href: "https://github.com/nidafarooqui/erp", label: "GitHub" }
@@ -91,7 +91,12 @@ const siteConfig = {
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ["https://buttons.github.io/buttons.js"],
+  scripts: [
+    "https://buttons.github.io/buttons.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
+    "/js/code-block-buttons.js"
+  ],
+  stylesheets: ["/css/code-block-buttons.css"],
 
   // On page navigation for the current documentation page.
   onPageNav: "separate",
