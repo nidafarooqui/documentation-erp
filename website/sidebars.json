@@ -1,12 +1,10 @@
 {
   "docs": {
-    "Getting Started": ["installation", "doc9"],
-    "Guides": ["doc2"]
-  },
-  "api": {
-    "First Category": ["doc4", "doc5"]
+    "Getting Started": ["installation", "site-structure"],
+    "Guides": ["creating-processes", "adding-processes"],
+    "API": ["doc4", "doc5", "doc2", "exampledoc4", "exampledoc5"]
   },
   "tutorial": {
-    "Tutorial": ["settingUp"]
+    "Tutorial": ["setting-up"]
   }
 }

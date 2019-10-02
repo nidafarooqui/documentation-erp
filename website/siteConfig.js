@@ -32,13 +32,16 @@ const users = [
 
 const siteConfig = {
   title: "ERP", // Title for your website.
-  tagline: "An erp application made for the assembler.",
+  tagline: "An erp application made for the assembler tool.",
   url: "https://nidafarooqui.github.io", // Your website URL
   baseUrl: "/documentation-erp/", // Base URL for your project */
+  docsUrl: "", // don't prefix docs URLs with /docs/
+  repoUrl: "https://github.com/nidafarooqui/erp",
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
-
+  editUrl:
+    "https://github.com/nidafarooqui/documentation-erp/edit/master/docs/",
   // Used for publishing and more
   projectName: "documentation-erp",
   organizationName: "nidafarooqui",
@@ -49,7 +52,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: "installation", label: "Docs" },
-    { doc: "settingUp", label: "Tutorial" },
+    { doc: "setting-up", label: "Tutorial" },
     { doc: "doc4", label: "API" },
     { href: "https://github.com/nidafarooqui/erp", label: "GitHub" }
   ],
@@ -87,16 +90,15 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: "default"
+    theme: "monokai"
   },
 
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [
     "https://buttons.github.io/buttons.js",
     "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
-    "/js/code-block-buttons.js"
+    "/documentation-erp/js/code-block-buttons.js"
   ],
-  stylesheets: ["/css/code-block-buttons.css"],
 
   // On page navigation for the current documentation page.
   onPageNav: "separate",
@@ -115,11 +117,18 @@ const siteConfig = {
   enableUpdateBy: true,
 
   // Show documentation's last update time.
-  enableUpdateTime: true
+  enableUpdateTime: true,
+
+  cleanUrl: true,
+  scrollToTop: true,
+  scrollToTopOptions: {
+    zIndex: 100
+  },
+  // Collapsible categories in the side navigation.
+  docsSideNavCollapsible: true
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
 };
 
 module.exports = siteConfig;

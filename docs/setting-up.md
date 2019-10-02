@@ -1,5 +1,5 @@
 ---
-id: settingUp
+id: setting-up
 title: Setting Up
 ---
 

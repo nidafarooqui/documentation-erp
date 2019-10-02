@@ -17,9 +17,9 @@ class HomeSplash extends React.Component {
   render() {
     const { siteConfig, language = "" } = this.props;
     const { baseUrl, docsUrl } = siteConfig;
-    const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
+    //const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
     const langPart = `${language ? `${language}/` : ""}`;
-    const docUrl = doc => `${baseUrl}${docsPart}${langPart}${doc}`;
+    const docUrl = doc => `${baseUrl}${langPart}${doc}`;
 
     const SplashContainer = props => (
       <div className="homeContainer">
@@ -65,9 +65,7 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             {/* <Button href="#try">Try It Out</Button> */}
-            <Button href={docUrl("doc1.html")}>Get Started</Button>
-            <Button href={docUrl("settingUp.html")}>Tutorial</Button>
-            <Button href={docUrl("doc2.html")}>Guides</Button>
+            <Button href={docUrl("doc1")}>Get Started</Button>
           </PromoSection>
         </div>
       </SplashContainer>
