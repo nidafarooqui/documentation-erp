@@ -52,8 +52,8 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: "installation", label: "Docs" },
-    { doc: "setting-up", label: "Tutorial" },
-    { doc: "doc4", label: "API" },
+    { doc: "creating-processes", label: "Guides" },
+    { doc: "add-product", label: "API" },
     { href: "https://github.com/nidafarooqui/erp", label: "GitHub" }
   ],
 

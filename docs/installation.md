@@ -24,7 +24,8 @@ sidebar_label: Installation
    yarn
    ```
 
-> You have to be on Node >= 8.x and Yarn >= 1.5.
+1. Make sure you have Tomcat 6 or greater, the latest version of [ODE](https://ode.apache.org/getting-ode.html) and [Apache Axis2](http://axis.apache.org/axis2/java/core/download.html) installed.
+   > You should be on Tomcat >= 6.0.45.
 
 ## Running the erp application
 
@@ -36,13 +37,14 @@ described in the [Prerequisites](#prerequisites) section:
 1.  The server will start running at http://localhost:4000 if it did not already open
     automatically.
 1.  Make sure the war files of the services are inside the `webapps` folder.
-1.  Make sure the deployment folders of the BPEL processes are in `ode/WEB-INF/processes/`
 
-### FOR DEVELOPMENT:
+> Make sure the deployment folders of the BPEL processes are in `ode/WEB-INF/processes/`
+
+### For Development:
 
 You can run both services and processes in Tomcat. You will however need to install this [plugin](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi) to avoid CORS errors.
 
-### FOR PRODUCTION:
+### For Production:
 
 Simply run `yarn run build` and paste the public folder that is generated inside the webapps folder in Tomcat along with the services and processes. You will also need to paste the logo and favicons images not showing up to the `ROOT` folder.
 

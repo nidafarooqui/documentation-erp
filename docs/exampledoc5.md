@@ -12,3 +12,7 @@ Text describing my function
 ### `docdoc(file)`
 
 Text describing my function
+
+| foo | bar |
+| --- | --- |
+| baz | bim |

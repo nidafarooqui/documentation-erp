@@ -24,9 +24,9 @@ root-directory
 │ │ │  ├── endpoints.js
 │ │ │  ├── fetchSuppliers.js
 │ │ │  └── util.js
+│ │ ├── constants.js
 │ │ ├── ERP.jsx
-│ │ ├── Menu.jsx
-│ │ └── Sider.jsx
+│ │ ├── ....jsx
 │ │ └── TabContent.jsx
 │ ├── Profile
 │ ├── styles
@@ -39,11 +39,15 @@ root-directory
 ├── .prettierrc
 ├── ...
 ├── package.json
-└── README.md
+├── README.md
 ├── server.js
 └── webpack.config.js
 
 ```
+
+## Explanations
+
+Some of the files you need to know about and could use as you expand the application are explained below.
 
 ### auth0-variables.js
 
@@ -67,28 +71,20 @@ You can log in to the dashboard from here or go to the web store.
 
 All the endpoint paths for services or processes lie here.
 
+### constants.js
+
+All constant values related to the erp database are stored here.
+
 ### util.js
 
 Some utility functions that have been used a number of times in a lot of places.
 
 ## File paths for links that may change
 
+- `src\Auth\Auth.js`
 - `src\Auth\auth0-variables.js` (Callback link for authentication\*\*)
-- `src\routes.js` (Link to the Store)
+- `src\routes.js`
 - `src\components\processes\endpoints.js` (Links to all services and processes)
-- `public\index.html` (The src path which is currently `src="/bundle.js"` will change according to the folder it is kept inside, in the webapps folder in Tomcat. See ccrl-accounting as an example.)
+- `public\index.html` (The src path which is currently `src="/bundle.js"` will change in when you place the files in Tomcat because you don't keep files at the root level there. So change the path relative to the folder you keept it inside. As of now, it has been changed to `/erp/bundle.js`)
 
-\*\*This app uses the [Auth0](https://auth0.com/) api for authentication. You will need to change the urls in the Auth0 Admin Panel before changing the link for the callback here.
-
-| foo | bar |
-| --- | --- |
-| baz | bim |
-
-**Bold** _italic_ `code` [Links](#url)
-
-> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
-> id sem consectetuer libero luctus adipiscing.
-
-- Hey
-- Ho
-- Let's Go
+> This app uses the [Auth0](https://auth0.com/) api for authentication. You will need to change the urls in the Auth0 Admin Panel before changing the link for the callback here.
