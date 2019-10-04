@@ -5,7 +5,7 @@ title: Adding a Process to the ERP Application
 
 This guide will demonstrate how to add a process created using [assembler](http://203.135.63.70/assemble_empty_node/requirement_specs.jsp) to the erp application. We will use the `GRNByProduct` process as an example.
 
-> For more information on how to create a process, [view this guide](/documentation-erp/creating-processes)
+> For more information on how to create a process, [view this guide](/erp/creating-processes)
 
 ## Add Wizdler
 
@@ -41,7 +41,7 @@ In our example, we selected GRNByProductSOAP11port_http. If you don't see it, do
 
 You should see a request looking like this.
 
-![](/documentation-erp/img/process-request.png)
+![](/erp/img/process-request.png)
 
 Copy this request and change it to this format.
 

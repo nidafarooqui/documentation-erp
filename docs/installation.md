@@ -30,28 +30,32 @@ sidebar_label: Installation
 ## Running the erp application
 
 After installing nodejs and yarn, as
-described in the [Prerequisites](#prerequisites) section:
+described in the [prerequisites](#prerequisites) section:
 
 1.  From within the `erp` directory, run the local web server using
-    `yarn dev`.
+
+    ```bash
+    yarn dev
+    ```
+
 1.  The server will start running at http://localhost:4000 if it did not already open
     automatically.
 1.  Make sure the war files of the services are inside the `webapps` folder.
 
 > Make sure the deployment folders of the BPEL processes are in `ode/WEB-INF/processes/`
 
-### For Development:
-
 You can run both services and processes in Tomcat. You will however need to install this [plugin](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi) to avoid CORS errors.
-
-### For Production:
-
-Simply run `yarn run build` and paste the public folder that is generated inside the webapps folder in Tomcat along with the services and processes. You will also need to paste the logo and favicons images not showing up to the `ROOT` folder.
 
 ## Building the erp application
 
 To build the application:
 
 1.  From within the `erp` directory, build the app using
-    `yarn build`.
-1.  A `public` folder will be generated which you can then copy and paste onto your server.
+
+    ```bash
+    yarn build
+    ```
+
+1.  A `public` folder will be generated which you can then copy and inside the webapps folder in your Tomcat server.
+
+> You will also need to paste the logo and favicons images not showing up to the `ROOT` folder.
