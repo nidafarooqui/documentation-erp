@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Installation · ERP</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Prerequisites"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Installation · ERP"/><meta property="og:type" content="website"/><meta property="og:url" content="https://nidafarooqui.github.io/erp/"/><meta property="og:description" content="## Prerequisites"/><meta property="og:image" content="https://nidafarooqui.github.io/erp/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://nidafarooqui.github.io/erp/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/erp/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/documentation-erp/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/erp/js/scrollSpy.js"></script><link rel="stylesheet" href="/erp/css/main.css"/><script src="/erp/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/erp/"><img class="logo" src="/erp/img/favicon.ico" alt="ERP"/><h2 class="headerTitleWithLogo">ERP</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/erp/installation" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/erp/creating-processes" target="_self">Guides</a></li><li class="siteNavGroupActive"><a href="/erp/add-product" target="_self">API</a></li><li class=""><a href="https://github.com/nidafarooqui/erp" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Getting Started</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/erp/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/erp/site-structure">The Application Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/erp/creating-processes">Creating a BPEL Process</a></li><li class="navListItem"><a class="navItem" href="/erp/adding-processes">Adding a Process to the ERP Application</a></li><li class="navListItem"><a class="navItem" href="/erp/authentication">Setting up and Configuring the Authentication</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/erp/add-product">Add Product</a></li><li class="navListItem"><a class="navItem" href="/erp/doc5">Fifth Document</a></li><li class="navListItem"><a class="navItem" href="/erp/doc2">document number 2</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nidafarooqui/documentation-erp/edit/master/docs/installation.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Installation</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<ol>
+<li><p>Ensure you have the latest version of <a href="https://nodejs.org/en/download/">Node</a> installed. We also recommend you install <a href="https://yarnpkg.com/en/docs/install">Yarn</a> as well.</p>
+<blockquote>
+<p>You have to be on Node &gt;= 8.x and Yarn &gt;= 1.5.</p>
+</blockquote></li>
+<li><p>Create a project, if none exists, and change your directory to this project's root.</p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> erp
+</code></pre>
+<p>Note: This documentation uses <code>yarn</code> commands, but <code>npm</code> will also work. You can compare <code>yarn</code> and <code>npm</code> commands in the <a href="https://yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison">yarn docs, here</a>.</p></li>
+<li><p>Install all the dependencies using yarn.</p>
+<pre><code class="hljs css language-bash">yarn
+</code></pre></li>
+<li><p>Make sure you have Tomcat 6 or greater, the latest version of <a href="https://ode.apache.org/getting-ode.html">ODE</a> and <a href="http://axis.apache.org/axis2/java/core/download.html">Apache Axis2</a> installed.</p>
+<blockquote>
+<p>You should be on Tomcat &gt;= 6.0.45.</p>
+</blockquote></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="running-the-erp-application"></a><a href="#running-the-erp-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the erp application</h2>
+<p>After installing nodejs and yarn, as
+described in the <a href="#prerequisites">prerequisites</a> section:</p>
+<ol>
+<li><p>From within the <code>erp</code> directory, run the local web server using</p>
+<pre><code class="hljs css language-bash">yarn dev
+</code></pre></li>
+<li><p>The server will start running at <a href="http://localhost:4000">http://localhost:4000</a> if it did not already open
+automatically.</p></li>
+<li><p>Make sure the war files of the services are inside the <code>webapps</code> folder.</p></li>
+</ol>
+<blockquote>
+<p>Make sure the deployment folders of the BPEL processes are in <code>ode/WEB-INF/processes/</code></p>
+</blockquote>
+<p>You can run both services and processes in Tomcat. You will however need to install this <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi">plugin</a> to avoid CORS errors.</p>
+<h2><a class="anchor" aria-hidden="true" id="building-the-erp-application"></a><a href="#building-the-erp-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building the erp application</h2>
+<p>To build the application:</p>
+<ol>
+<li><p>From within the <code>erp</code> directory, build the app using</p>
+<pre><code class="hljs css language-bash">yarn build
+</code></pre></li>
+<li><p>A <code>public</code> folder will be generated which you can then copy and inside the webapps folder in your Tomcat server.</p></li>
+</ol>
+<blockquote>
+<p>You will also need to paste the logo and favicons images not showing up to the <code>ROOT</code> folder.</p>
+</blockquote>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 10/4/2019 by Nida Farooqui</em></div><div class="docs-prevnext"><a class="docs-next button" href="/erp/site-structure"><span>The Application Structure</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#running-the-erp-application">Running the erp application</a></li><li><a href="#building-the-erp-application">Building the erp application</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/erp/" class="nav-home"><img src="/erp/img/favicon.ico" alt="ERP" width="66" height="58"/></a><div><h5>Docs</h5><a href="/erp/en/doc1.html">Getting Started</a><a href="/erp/en/doc2.html">Guides</a><a href="/erp/en/doc4.html">API Reference</a></div><div><h5>More</h5><a href="http://203.135.63.70/assemble_empty_node/requirement_specs.jsp">Assemble Empty Node</a><a href="https://github.com/nidafarooqui/erp">GitHub</a><a class="github-button" href="https://github.com/nidafarooqui/erp" data-icon="octicon-star" data-count-href="/nidafarooqui/erp/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 LUMS</section></footer></div></body></html>

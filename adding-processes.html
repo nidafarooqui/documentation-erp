@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Adding a Process to the ERP Application · ERP</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="This guide will demonstrate how to add a process created using [assembler](http://203.135.63.70/assemble_empty_node/requirement_specs.jsp) to the erp application. We will use the `GRNByProduct` process as an example."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Adding a Process to the ERP Application · ERP"/><meta property="og:type" content="website"/><meta property="og:url" content="https://nidafarooqui.github.io/erp/"/><meta property="og:description" content="This guide will demonstrate how to add a process created using [assembler](http://203.135.63.70/assemble_empty_node/requirement_specs.jsp) to the erp application. We will use the `GRNByProduct` process as an example."/><meta property="og:image" content="https://nidafarooqui.github.io/erp/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://nidafarooqui.github.io/erp/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/erp/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/documentation-erp/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/erp/js/scrollSpy.js"></script><link rel="stylesheet" href="/erp/css/main.css"/><script src="/erp/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/erp/"><img class="logo" src="/erp/img/favicon.ico" alt="ERP"/><h2 class="headerTitleWithLogo">ERP</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/erp/installation" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/erp/creating-processes" target="_self">Guides</a></li><li class="siteNavGroupActive"><a href="/erp/add-product" target="_self">API</a></li><li class=""><a href="https://github.com/nidafarooqui/erp" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Guides</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting Started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/erp/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/erp/site-structure">The Application Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guides<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/erp/creating-processes">Creating a BPEL Process</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/erp/adding-processes">Adding a Process to the ERP Application</a></li><li class="navListItem"><a class="navItem" href="/erp/authentication">Setting up and Configuring the Authentication</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">API<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/erp/add-product">Add Product</a></li><li class="navListItem"><a class="navItem" href="/erp/doc5">Fifth Document</a></li><li class="navListItem"><a class="navItem" href="/erp/doc2">document number 2</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/nidafarooqui/documentation-erp/edit/master/docs/adding-processes.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Adding a Process to the ERP Application</h1></header><article><div><span><p>This guide will demonstrate how to add a process created using <a href="http://203.135.63.70/assemble_empty_node/requirement_specs.jsp">assembler</a> to the erp application. We will use the <code>GRNByProduct</code> process as an example.</p>
+<blockquote>
+<p>For more information on how to create a process, <a href="/erp/creating-processes">view this guide</a></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="add-wizdler"></a><a href="#add-wizdler" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add Wizdler</h2>
+<p>Install this <a href="https://chrome.google.com/webstore/detail/wizdler/oebpmncolmhiapingjaagmapififiakb">chrome plugin</a> to make creating soap messages easier. This plugin parses the wsdl files and does most of the work for you.</p>
+<h2><a class="anchor" aria-hidden="true" id="running-the-process-in-tomcat"></a><a href="#running-the-process-in-tomcat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the Process in Tomcat</h2>
+<p>Navigate to the bin folder of your tomcat server and start tomcat.</p>
+<h4><a class="anchor" aria-hidden="true" id="windows"></a><a href="#windows" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Windows</h4>
+<pre><code class="hljs css language-bash">    startup.bat
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="unix"></a><a href="#unix" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unix</h4>
+<pre><code class="hljs css language-bash">    sudo ./startup.sh
+</code></pre>
+<p>Add the generated <code>GRNByProduct</code> folder inside the processes folder at this path in the tomcat server <code>webapps/ode/WEB-INF/processes/</code> and start tomcat.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-the-soap-message"></a><a href="#creating-the-soap-message" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the SOAP Message</h2>
+<p>Navigate to the path of the <code>GRNByProductArtifacts.wsdl</code> file. If you have been following along from the previous guide, it will look this <a href="http://localhost:8080/ode/processes/GRNByProduct">http://localhost:8080/ode/processes/GRNByProduct</a>, but the ports may be different.</p>
+<p>Click on the wizdler plugin and select the process. It will generate this request message for you.</p>
+<blockquote>
+<p>If you see a list of process ports, select the one that says something like [processName]SOAP11port_http.</p>
+</blockquote>
+<p>In our example, we selected GRNByProductSOAP11port_http. If you don't see it, don't worry and just select the only one that shows.</p>
+<p>You should see a request looking like this.</p>
+<p><img src="/erp/img/process-request.png" alt=""></p>
+<p>Copy this request and change it to this format.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> receiveInventoryXml = <span class="hljs-string">`&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"  xmlns:web="http://grnbyproduct"&gt;
+    &lt;soapenv:Body&gt;
+        &lt;web:GRNByProductRequest xmlns="http://grnbyproduct"&gt;
+            &lt;web:correlationId&gt;<span class="hljs-subst">${instanceId}</span>&lt;/web:correlationId&gt;
+            &lt;web:productId&gt;<span class="hljs-subst">${productId}</span>&lt;/web:productId&gt;
+            &lt;web:inventoryItemType&gt;<span class="hljs-subst">${inventoryItemType}</span>&lt;/web:inventoryItemType&gt;
+            &lt;web:supplier&gt;<span class="hljs-subst">${supplier}</span>&lt;/web:supplier&gt;
+            &lt;web:facility&gt;<span class="hljs-subst">${facility}</span>&lt;/web:facility&gt;
+            &lt;web:facilityLocation&gt;<span class="hljs-subst">${facilityLocation}</span>&lt;/web:facilityLocation&gt;
+            &lt;web:quantityAccepted&gt;<span class="hljs-subst">${quantityAccepted}</span>&lt;/web:quantityAccepted&gt;
+            &lt;web:unitPrice&gt;<span class="hljs-subst">${unitPrice}</span>&lt;/web:unitPrice&gt;
+            &lt;web:receivedBy&gt;<span class="hljs-subst">${receivedBy}</span>&lt;/web:receivedBy&gt;
+            &lt;web:quantityRejected&gt;<span class="hljs-subst">${quantityRejected}</span>&lt;/web:quantityRejected&gt;
+            &lt;web:rejectionReason&gt;<span class="hljs-subst">${rejectionReason}</span>&lt;/web:rejectionReason&gt;
+        &lt;/web:GRNByProductRequest&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;`</span>;
+</code></pre>
+<p>Post this data asynchronously to the server using whatever library or method you prefer. The erp application uses the axios library to post it like this. Once you get the response, you can parse it and handle it however you like.</p>
+<p>In the erp application it is done like this.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> receiveInventoryByProductId(
+  url,
+  receiveInventoryXml,
+  headers,
+  message,
+  handleSetState
+);
+</code></pre>
+<table>
+<thead>
+<tr><th>Name</th><th>Explanation</th></tr>
+</thead>
+<tbody>
+<tr><td>receiveInventoryByProductId</td><td>Returns a promise after posting through axios,parses the response and call handleSetState to save the data.</td></tr>
+<tr><td>URL</td><td>The path of the wsdl file</td></tr>
+<tr><td>receiveInventoryXml</td><td>The SOAP request message</td></tr>
+<tr><td>headers</td><td>The http headers passed to the server.</td></tr>
+<tr><td>message</td><td>The toast notification to be called once the process completes.</td></tr>
+<tr><td>handleSetState</td><td>Callback function that saves data from the response to the state.</td></tr>
+</tbody>
+</table>
+<blockquote>
+<p>Make sure to add the options for SOAP services and BPEL processes.</p>
+</blockquote>
+<pre><code class="hljs css language-javascript"><span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"xml"</span>, <span class="hljs-attr">SOAPAction</span>: <span class="hljs-string">""</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 10/4/2019 by Nida Farooqui</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/erp/creating-processes"><span class="arrow-prev">← </span><span>Creating a BPEL Process</span></a><a class="docs-next button" href="/erp/authentication"><span>Setting up and Configuring the Authentication</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#add-wizdler">Add Wizdler</a></li><li><a href="#running-the-process-in-tomcat">Running the Process in Tomcat</a></li><li><a href="#creating-the-soap-message">Creating the SOAP Message</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/erp/" class="nav-home"><img src="/erp/img/favicon.ico" alt="ERP" width="66" height="58"/></a><div><h5>Docs</h5><a href="/erp/en/doc1.html">Getting Started</a><a href="/erp/en/doc2.html">Guides</a><a href="/erp/en/doc4.html">API Reference</a></div><div><h5>More</h5><a href="http://203.135.63.70/assemble_empty_node/requirement_specs.jsp">Assemble Empty Node</a><a href="https://github.com/nidafarooqui/erp">GitHub</a><a class="github-button" href="https://github.com/nidafarooqui/erp" data-icon="octicon-star" data-count-href="/nidafarooqui/erp/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 LUMS</section></footer></div></body></html>
