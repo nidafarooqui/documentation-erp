@@ -34,7 +34,7 @@ const siteConfig = {
   title: "ERP", // Title for your website.
   tagline: "An erp application made for the assembler tool.",
   url: "https://nidafarooqui.github.io", // Your website URL
-  baseUrl: "/erp/", // Base URL for your project */
+  baseUrl: "/", // Base URL for your project */
   docsUrl: "", // don't prefix docs URLs with /docs/
   repoUrl: "https://github.com/nidafarooqui/erp",
   // For github.io type URLs, you would set the url and baseUrl like:
