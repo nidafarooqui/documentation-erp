@@ -16,8 +16,7 @@ const GridBlock = CompLibrary.GridBlock;
 class HomeSplash extends React.Component {
   render() {
     const { siteConfig, language = "" } = this.props;
-    const { baseUrl, docsUrl } = siteConfig;
-    //const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
+    const { baseUrl } = siteConfig;
     const langPart = `${language ? `${language}/` : ""}`;
     const docUrl = doc => `${baseUrl}${langPart}${doc}`;
 
@@ -52,7 +51,7 @@ class HomeSplash extends React.Component {
 
     const Button = props => (
       <div className="pluginWrapper buttonWrapper">
-        <a className="button" href={props.href} target={props.target}>
+        <a className="button hero" href={props.href} target={props.target}>
           {props.children}
         </a>
       </div>
@@ -64,7 +63,6 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            {/* <Button href="#try">Try It Out</Button> */}
             <Button href={docUrl("doc1")}>Get Started</Button>
           </PromoSection>
         </div>
@@ -92,74 +90,22 @@ class Index extends React.Component {
       </Container>
     );
 
-    const FeatureCallout = () => (
-      <div
-        className="productShowcaseSection paddingBottom"
-        style={{ textAlign: "center" }}
-      >
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
-      </div>
-    );
-
-    const TryOut = () => (
-      <Block id="try">
-        {[
-          {
-            content:
-              "To make your landing page more attractive, use illustrations! Check out " +
-              "[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. " +
-              "The illustrations you see on this page are from unDraw.",
-            image: `${baseUrl}img/undraw_code_review.svg`,
-            imageAlign: "left",
-            title: "Wonderful SVG Illustrations"
-          }
-        ]}
-      </Block>
-    );
-
-    const Description = () => (
-      <Block background="dark">
-        {[
-          {
-            content:
-              "This is another description of how this project is useful",
-            image: `${baseUrl}img/undraw_note_list.svg`,
-            imageAlign: "right",
-            title: "Description"
-          }
-        ]}
-      </Block>
-    );
-
-    const LearnHow = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              "Each new Docusaurus project has **randomly-generated** theme colors.",
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: "right",
-            title: "Randomly Generated Theme Colors"
-          }
-        ]}
-      </Block>
-    );
-
     const Features = () => (
-      <Block layout="fourColumn">
+      <Block layout="fourColumn" background="light">
         {[
           {
-            content: "This is the content of my feature",
+            content:
+              "Easily edit, remove or add processes into the application. It is also very easy to customize the UI based on the process.",
             image: `${baseUrl}img/undraw_react.svg`,
             imageAlign: "top",
-            title: "Feature One"
+            title: "Customizable"
           },
           {
-            content: "The content of my second feature",
+            content:
+              "All processes and services are deployed on the cloud so you don't have to worry about hogging resources.",
             image: `${baseUrl}img/undraw_operating_system.svg`,
             imageAlign: "top",
-            title: "Feature Two"
+            title: "Microservice Architecture"
           }
         ]}
       </Block>
@@ -199,10 +145,6 @@ class Index extends React.Component {
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
           <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
           <Showcase />
         </div>
       </div>

@@ -73,4 +73,4 @@ Creates a soap request and calls the function to run the add product service.
 
 #### Example
 
-See [this guide](/documentation-erp/adding-processes) on how to create a request
+See [this guide](../guides/adding-processes) on how to create a request

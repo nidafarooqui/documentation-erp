@@ -36,6 +36,11 @@ const siteConfig = {
   url: "https://nidafarooqui.github.io", // Your website URL
   baseUrl: "/", // Base URL for your project */
   docsUrl: "", // don't prefix docs URLs with /docs/
+  // algolia: {
+  //   apiKey: "518c6e3c629811d8daa1d21dc8bcfa37",
+  //   indexName: "redux",
+  //   algoliaOptions: {}
+  // },
   repoUrl: "https://github.com/nidafarooqui/erp",
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -51,10 +56,11 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    { doc: "installation", label: "Docs" },
-    { doc: "creating-processes", label: "Guides" },
-    { doc: "add-product", label: "API" },
-    { href: "https://github.com/nidafarooqui/erp", label: "GitHub" }
+    { doc: "introduction/installation", label: "Docs" },
+    { doc: "guides/creating-processes", label: "Guides" },
+    { doc: "api/add-product", label: "API" },
+    { href: "https://github.com/nidafarooqui/erp", label: "GitHub" },
+    { search: true }
   ],
 
   // If you have users set above, you add it here:
@@ -68,9 +74,17 @@ const siteConfig = {
   /* Colors for website */
   colors: {
     primaryColor: "#922639",
-    secondaryColor: "#661a27"
+    secondaryColor: "#661a27",
+    accentColor1: "#717171",
+    accentColor2: "#F3EAFF",
+    accentColor3: "#D2B9F3",
+    accentColor4: "#ecf9f1",
+    accentColor5: "#cbead3",
+    accentColor6: "#2F5773"
   },
 
+  //background-color: #ecf9f0;
+  //   border-left: 8px solid #cbeacc;
   /* Custom fonts for website */
   /*
   fonts: {
@@ -97,7 +111,7 @@ const siteConfig = {
   scripts: [
     "https://buttons.github.io/buttons.js",
     "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js",
-    "/documentation-erp/js/code-block-buttons.js"
+    "/js/code-block-buttons.js"
   ],
 
   // On page navigation for the current documentation page.

@@ -1,6 +1,6 @@
 ---
-id: doc2
-title: document number 2
+id: create-purchase-order
+title: Create Purchase Order
 ---
 
 This is a link to [another document.](doc3.md)  

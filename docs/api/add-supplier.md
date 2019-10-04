@@ -1,6 +1,6 @@
 ---
-id: doc5
-title: Fifth Document
+id: add-supplier
+title: Add Supplier
 ---
 
 Another one

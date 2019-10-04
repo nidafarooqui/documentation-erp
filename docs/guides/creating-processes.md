@@ -12,13 +12,13 @@ Select a process from the dropdown and give it a name. This name will be used to
 
 For this tutorial we will create a **GRN By Product** process.
 
-![](/documentation-erp/img/assembler-intro.png)
+![](/img/assembler-intro.png)
 
 ### Creating the GRN By Product Process
 
 Select an activity from the dropdown and click on **Add Activity**.
 
-![](/documentation-erp/img/activity-selection.gif)
+![](/img/activity-selection.gif)
 
 You can't view the dropdown above but you should add the activities in the following order:
 

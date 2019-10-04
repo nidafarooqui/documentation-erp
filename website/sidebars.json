@@ -1,7 +1,32 @@
 {
   "docs": {
-    "Getting Started": ["installation", "site-structure"],
-    "Guides": ["creating-processes", "adding-processes", "authentication"],
-    "API": ["add-product", "doc5", "doc2", "exampledoc4", "exampledoc5"]
+    "Getting Started": [
+      "introduction/installation",
+      "introduction/site-structure"
+    ],
+    "Guides": [
+      "guides/creating-processes",
+      "guides/adding-processes",
+      "guides/authentication"
+    ],
+    "API": [
+      "api/add-product",
+      "api/add-supplier",
+      "api/create-purchase-order",
+      "api/edit-product",
+      "api/receive-by-product",
+      "api/receive-by-purchase-order",
+      "api/product-wise-sales-report",
+      "api/sales-report",
+      "api/return-order",
+      "api/sales-order",
+      "api/view-grn",
+      "api/view-product",
+      "api/view-purchase-order",
+      "api/view-sales-order",
+      "api/view-supplier",
+      "api/register-user"
+    ],
+    "Assemble API": ["doc3"]
   }
 }
