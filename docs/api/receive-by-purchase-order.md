@@ -23,7 +23,7 @@ Sends a post request to the server to retrieve a list of order items.
 
 `Promise` _(any)_: A promise object that resolves or rejects after calling the service.
 
-# getOrderItems: (orderId: any, handleSetState: any) => Promise<void>`
+# `getOrderItems: (orderId: any, handleSetState: any) => Promise<void>`
 
 Creates a soap request using the state and calls a function to run the `orderItems` service.
 
@@ -61,7 +61,7 @@ Sends a post request to the server to retrieve a list of order items.
 
 Log the response first to see the structure before parsing it, it can change based on the request.
 
-# receiveInventoryItemsResponse: (url: any, xml: any, headers: any) => Promise<any>`
+# `receiveInventoryItemsResponse: (url: any, xml: any, headers: any) => Promise<any>`
 
 Creates a soap request using the state and calls a function to run the `receiveInventory` service.
 
@@ -97,9 +97,10 @@ Creates a soap request using the state and calls a function to run the `receiveI
 
 #### Returns
 
-`Promise` _(Object, Function)_: Returns a promise object when resolved or rejects after calling the service. The promise object 
-{
+`Promise` _(Object)_: Returns a promise object when resolved or rejects after calling the service. The promise object contains the following:
 
+```javascript
+{
     orderId: any;
     headers: {
         headers: {
@@ -109,6 +110,9 @@ Creates a soap request using the state and calls a function to run the `receiveI
             "Access-Control-Allow-Origin": string;
         };
     };
+    handleSetState: any;
+}
+```
 
 #### Example
 

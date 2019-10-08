@@ -25,7 +25,7 @@ Sends a post request to the server to edit a product.
 
 Log the response first to see the structure before parsing it, it can change based on the request.
 
-# editProduct: (state: any) => Promise<void>`
+# `editProduct: (state: any) => Promise<void>`
 
 Creates a soap request using the state and calls a function to run the edit product service.
 
