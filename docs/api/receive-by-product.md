@@ -9,7 +9,7 @@ Sends a post request to the server to receive a product.
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the `receiveInventoryByProductId` service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 

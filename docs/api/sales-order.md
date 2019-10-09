@@ -9,7 +9,7 @@ Sends a post request for every soap request that is passed through the `xml` str
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 
@@ -27,7 +27,7 @@ Sends a post request to the `getOrderDetails` service and returns the order deta
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the `confirmOrder` service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 
@@ -35,7 +35,7 @@ Sends a post request to the `getOrderDetails` service and returns the order deta
 
 4. `hide` _(Function)_: Called after the response, to end the loading notification.
 
-5. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `supplierId` after it is fetched and parsed from the xml response.
+5. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `receipt` after it is fetched and parsed from the xml response.
 
 #### Returns
 
@@ -47,7 +47,7 @@ Creates a soap request and calls `runService` function to run the sales order pr
 
 #### Arguments
 
-1. `state` _(any)_: The state object of the `AddProduct` component.
+1. `state` _(any)_: The state object of the `SalesOrder` component.
 
 2. `handleState` _(Function)_: Callback function that calls the setState method defined in the component to set the `receipt` after it is fetched and parsed from the xml response of the `confirmOrder` service.
 

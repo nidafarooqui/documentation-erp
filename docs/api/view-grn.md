@@ -9,13 +9,13 @@ Sends a post request to the server to fetch the `grnList` and save it to the sta
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the `fetchGRNListService` service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 
 3. `headers` _(any)_: The https headers object.
 
-4. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `productId` after it is fetched and parsed from the xml response.
+4. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `grnList` after it is fetched and parsed from the xml response.
 
 #### Returns
 
@@ -27,7 +27,7 @@ Creates a soap request and calls the function to run the `listGRN` service.
 
 #### Arguments
 
-1. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `productId` after it is fetched and parsed from the xml response.
+1. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `grnList` after it is fetched and parsed from the xml response.
 
 #### Returns
 
@@ -39,13 +39,13 @@ Sends a post request to the server to fetch the `grndetails` and save it to the 
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the `fetchGRNDetailsService` service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 
 3. `headers` _(any)_: The https headers object.
 
-4. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `productId` after it is fetched and parsed from the xml response.
+4. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `grndetails` after it is fetched and parsed from the xml response.
 
 #### Returns
 
@@ -71,7 +71,7 @@ Sends a post request to the server to fetch the `grnList` and save it to the sta
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the edit GRN service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 
@@ -87,7 +87,7 @@ Creates a soap request and calls the function to run the `editGRNDetails` servic
 
 #### Arguments
 
-1. `handleSetState` _(Function)_: Callback function that calls the setState method defined in the component to set the `productId` after it is fetched and parsed from the xml response.
+1. `grnDetailsList` _(any)_: A list of the GRN details containing the `inventoryItemId`, `inventoryItemTypeId`, `productId`, `acceptedQuantity`, `rejectionReason`, `facilityName` and `rejectedQuantity`.
 
 #### Returns
 

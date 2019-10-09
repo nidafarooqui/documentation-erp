@@ -9,7 +9,7 @@ Sends a post request to the server to retrive the order items.
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the `returnItemsDetail` service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 
@@ -37,7 +37,7 @@ Sends a post request to retrieve the `returnHeaderId`.
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the `returnOrderHeader` service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 
@@ -71,7 +71,7 @@ Posts a soap request to run the `returnItemsDetail` service.
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the `returnItemsDetail` service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 

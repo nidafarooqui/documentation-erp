@@ -9,7 +9,7 @@ Sends a post request to the server to add a supplier and saves the `supplierId` 
 
 #### Arguments
 
-1. `url` _(any)_: The path of the add product service as a string.
+1. `url` _(any)_: The path of the add supplier service as a string.
 
 2. `xml` _(any)_: The SOAP request string.
 
