@@ -36,11 +36,11 @@ const siteConfig = {
   url: "https://nidafarooqui.github.io", // Your website URL
   baseUrl: "/", // Base URL for your project */
   docsUrl: "", // don't prefix docs URLs with /docs/
-  // algolia: {
-  //   apiKey: "518c6e3c629811d8daa1d21dc8bcfa37",
-  //   indexName: "redux",
-  //   algoliaOptions: {}
-  // },
+  algolia: {
+    apiKey: "9be549c31e2589192a23a05e94e15d0e",
+    indexName: "nidafarooqui_erp",
+    algoliaOptions: {}
+  },
   repoUrl: "https://github.com/nidafarooqui/erp",
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
