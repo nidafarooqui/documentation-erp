@@ -27,6 +27,10 @@
       "api/view-supplier",
       "api/register-user"
     ],
-    "Assemble API": ["doc3"]
+    "Assemble API": [
+      "assemble-api/graph-selection",
+      "assemble-api/graph-rendering",
+      "assemble-api/graph-events"
+    ]
   }
 }
