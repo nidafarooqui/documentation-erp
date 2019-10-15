@@ -3,7 +3,7 @@ id: graph-selection
 title: Graph Selection
 ---
 
-This section documents the functions used in the `GraphSelection.js` file which is used to create a BPEL process graph. Here you can add or remove activities and conditionals (loop, XOR and AND).
+This section documents the functions used in the `GraphSelection.js` file which is used to create a BPEL process graph. Here you can add or remove activities and conditionals (loop, XOR and AND). After you create a d3 graph and click on `Proceed`, it creates a `RefinedMappings.txt` file from the graph and saves it to the folder you named in the previous step, under `auth_refine_output` in the server.
 
 # Some Important Variables
 
