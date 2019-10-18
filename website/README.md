@@ -31,11 +31,11 @@ $ npm run start
 $ npm run build
 ```
 
-4. Publish it to nidafarooqui.github.io/documentation-erp:
+4. Publish it by pushing it to the master branch github:
 
 ```sh
 # Building the site
-$ npm run publish
+$ git push origin master
 ```
 
 ## Directory Structure
