@@ -8,7 +8,7 @@ Go to the [assembler home page](http://203.135.63.70/assemble_empty_node/require
 
 ## Selecting a process
 
-Select a process from the dropdown and give it a name. This name will be used to generate the process files later and will also be used later in the erp application.
+Select a process from the dropdown and give it a name. This name will be used to generate the process files later and will also be used later in the erp application.Maria
 
 For this tutorial we will create a **GRN By Product** process.
 
