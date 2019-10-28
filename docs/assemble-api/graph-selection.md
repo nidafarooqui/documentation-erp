@@ -100,7 +100,7 @@ You can remove a node by selecting it and then clicking on 'Remove Activity'. Th
 
 Displays a loop modal to decide where to place the loop in your graph.
 
-1. `Block Name` : The name of the loop.
+1. `Block Name` : The name of the loop.Try to avoid any special character.
 
 2. `Insert 'Loop Start' before`: Before which service/node should the start of the loop be added.
 
@@ -116,7 +116,7 @@ Sets the `previous` and `next` of the loop block and the adjacent nodes/services
 
 #### Arguments
 
-1. `loopName` _(any)_: The name of the loop.
+1. `loopName` _(any)_: The name of the loop should not be contain any special character.
 
 ## Adding a XOR Block
 
